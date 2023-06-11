@@ -1,8 +1,7 @@
 package com.guijarro.smalldice.domain
 
-import com.guijarro.smalldice.utils.UIState
-import kotlinx.coroutines.flow.Flow
+import retrofit2.Response
 
 interface Repository {
-    suspend fun getRandomNumber(): Flow<UIState<NumberModel>>
+    suspend fun getRandomNumber(): Response<String>
 }

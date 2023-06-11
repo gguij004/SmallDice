@@ -6,8 +6,10 @@ data class NumberModel(
     val number: String
 )
 
-fun RandomNumberDto?.mapToDomainNumber(): NumberModel =
-    NumberModel(
-        number = this?.num ?: "Number not available"
+fun String?.mapToDomainNumber(): NumberModel {
+    return NumberModel(
+        number =  this?.replace("\n","")?: "Error"
     )
+}
+
 
