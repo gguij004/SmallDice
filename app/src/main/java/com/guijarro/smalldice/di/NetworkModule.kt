@@ -1,7 +1,5 @@
 package com.guijarro.smalldice.di
 
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import com.guijarro.smalldice.data.RandomNumberApi
 import com.guijarro.smalldice.data.RandomNumberApi.Companion.BASE_URL
 import com.guijarro.smalldice.data.RepositoryImpl
@@ -15,7 +13,6 @@ import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton

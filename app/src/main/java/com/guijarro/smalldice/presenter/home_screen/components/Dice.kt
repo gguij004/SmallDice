@@ -15,10 +15,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.guijarro.smalldice.utils.Dice
 
 @Composable
 fun Dice(
-    number: String
+    number: Dice
 ) {
     Box(
         modifier = Modifier
@@ -29,32 +30,21 @@ fun Dice(
             modifier = Modifier.fillMaxHeight(),
             verticalArrangement = Arrangement.Center,
 
-        ) {
-            if (number == "0") {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    CircularProgressIndicator()
-                }
-            }
-            if (number == "1") {
-                FaceOne()
-            }
-            if (number == "2") {
-                FaceTwo()
-            }
-            if (number == "3") {
-                FaceThree()
-            }
-            if (number == "4") {
-                FaceFour()
-            }
-            if (number == "5") {
-                FaceFive()
-            }
-            if (number == "6") {
-                FaceSix()
+            ) {
+            when (number) {
+                Dice.ONE -> FaceOne()
+                Dice.TWO -> FaceTwo()
+                Dice.THREE -> FaceThree()
+                Dice.FOUR -> FaceFour()
+                Dice.FIVE -> FaceFive()
+                Dice.SIX -> FaceSix()
+                Dice.LOADING ->
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        CircularProgressIndicator()
+                    }
             }
         }
     }

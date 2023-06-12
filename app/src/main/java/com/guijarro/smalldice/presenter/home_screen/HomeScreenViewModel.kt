@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.guijarro.smalldice.domain.GetNumberUseCase
 import com.guijarro.smalldice.domain.NumberModel
+import com.guijarro.smalldice.utils.Dice
 import com.guijarro.smalldice.utils.UIState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
@@ -22,20 +23,14 @@ class HomeScreenViewModel @Inject constructor(
 
     private val _randomNumber: MutableState<UIState<NumberModel>> = mutableStateOf(
         UIState.SUCCESS(
-            NumberModel(number = "1")
+            NumberModel(number = Dice.ONE)
         )
     )
     val randomNumber: State<UIState<NumberModel>> = _randomNumber
 
     fun getRandomNumber() {
         getNumberUseCase().onEach { state ->
-            if (state is UIState.SUCCESS) {
-                _randomNumber.value = state
-            }else if (state is UIState.LOADING){
-                _randomNumber.value = state
-            }
-
+            _randomNumber.value = state
         }.launchIn(viewModelScope)
     }
-
 }

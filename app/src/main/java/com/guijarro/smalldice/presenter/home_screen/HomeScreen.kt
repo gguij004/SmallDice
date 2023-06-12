@@ -27,7 +27,7 @@ fun HomeScreen(
 
         when (val state = viewModel.randomNumber.value) {
             is UIState.LOADING -> {
-                  Dice( "0")
+                Dice(com.guijarro.smalldice.utils.Dice.LOADING)
             }
 
             is UIState.SUCCESS -> {

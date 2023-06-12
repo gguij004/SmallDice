@@ -10,7 +10,7 @@ import retrofit2.http.Query
 
 interface RandomNumberApi {
 
-    @GET("integers/")
+    @GET(END_POINT)
     suspend fun getRandomNumber(
 
         @Query("num") numbers: String = NUM,
@@ -25,7 +25,7 @@ interface RandomNumberApi {
 
     companion object {
         const val BASE_URL = "https://www.random.org/"
-        const val END_POINT = "/"
+        const val END_POINT = "integers/"
         const val NUM = "1"
         const val MIN = "1"
         const val MAX = "6"
