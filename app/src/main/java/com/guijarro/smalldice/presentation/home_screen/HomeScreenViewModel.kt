@@ -1,4 +1,4 @@
-package com.guijarro.smalldice.presenter.home_screen
+package com.guijarro.smalldice.presentation.home_screen
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State

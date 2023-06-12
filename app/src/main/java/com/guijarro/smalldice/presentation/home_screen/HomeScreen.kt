@@ -1,4 +1,4 @@
-package com.guijarro.smalldice.presenter.home_screen
+package com.guijarro.smalldice.presentation.home_screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -12,7 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.guijarro.smalldice.presenter.home_screen.components.Dice
+import com.guijarro.smalldice.presentation.home_screen.components.Dice
 import com.guijarro.smalldice.utils.UIState
 
 @Composable

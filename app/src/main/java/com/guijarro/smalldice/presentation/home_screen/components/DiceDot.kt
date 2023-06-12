@@ -1,4 +1,4 @@
-package com.guijarro.smalldice.presenter.home_screen.components
+package com.guijarro.smalldice.presentation.home_screen.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
